@@ -1,0 +1,12 @@
+*{box-sizing:border-box}
+html{font-size:16px}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.45;-webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0 0 .4em;line-height:1.2}
+h1{font-size:1.6rem} h2{font-size:1.2rem} h3{font-size:1.02rem}
+a{color:var(--rojo-2)}
+/* Enlaces de la interfaz (menús, tarjetas, botones-enlace, nombre de usuario): sin subrayado en ningún estado ni tema. */
+a,a:link,a:visited,a:hover,a:active,a:focus,a:focus-visible{text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+.oculto{display:none!important}
+svg.ic{width:1.15em;height:1.15em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:-.2em}
+

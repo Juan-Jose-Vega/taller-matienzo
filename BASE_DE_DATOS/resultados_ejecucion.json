@@ -1,0 +1,4388 @@
+{
+ "version_mysql": "8.0.46-0ubuntu0.24.04.5",
+ "fecha": "2026-11-23 02:40:33",
+ "total": 165,
+ "ok": 165,
+ "fallas": [],
+ "filas_antes": {
+  "asignaciones_trabajo": 11,
+  "auditoria": 13,
+  "avances_ordenes": 10,
+  "catalogo_items": 17,
+  "categorias_catalogo": 7,
+  "clientes": 16,
+  "comprobantes_pagos_sistema": 0,
+  "consultas": 21,
+  "detalles_consultas": 28,
+  "detalles_liquidaciones_mecanicos": 7,
+  "detalles_pagos_clientes": 8,
+  "detalles_pagos_sistema": 3,
+  "detalles_presupuestos": 26,
+  "historial_estados_ordenes": 40,
+  "historial_precios_catalogo": 1,
+  "liquidaciones_mecanicos": 3,
+  "movimientos_mecanicos": 7,
+  "movimientos_stock": 29,
+  "notificaciones": 13,
+  "ordenes_trabajo": 11,
+  "pagos_clientes": 7,
+  "pagos_sistema": 2,
+  "periodos_pago_sistema": 2,
+  "presupuestos": 12,
+  "propuestas_ia": 1,
+  "roles": 2,
+  "superadmins": 1,
+  "taller": 1,
+  "usuarios": 5,
+  "vehiculos": 17
+ },
+ "filas_despues": {
+  "asignaciones_trabajo": 11,
+  "auditoria": 13,
+  "avances_ordenes": 10,
+  "catalogo_items": 17,
+  "categorias_catalogo": 7,
+  "clientes": 16,
+  "comprobantes_pagos_sistema": 0,
+  "consultas": 21,
+  "detalles_consultas": 28,
+  "detalles_liquidaciones_mecanicos": 7,
+  "detalles_pagos_clientes": 8,
+  "detalles_pagos_sistema": 3,
+  "detalles_presupuestos": 26,
+  "historial_estados_ordenes": 40,
+  "historial_precios_catalogo": 1,
+  "liquidaciones_mecanicos": 3,
+  "movimientos_mecanicos": 7,
+  "movimientos_stock": 29,
+  "notificaciones": 13,
+  "ordenes_trabajo": 11,
+  "pagos_clientes": 7,
+  "pagos_sistema": 2,
+  "periodos_pago_sistema": 2,
+  "presupuestos": 12,
+  "propuestas_ia": 1,
+  "roles": 2,
+  "superadmins": 1,
+  "taller": 1,
+  "usuarios": 5,
+  "vehiculos": 17
+ },
+ "tablas_con_cambios": {},
+ "pruebas": [
+  {
+   "id": "1.1",
+   "modulo": "1",
+   "nombre": "Usuarios de taller con rol válido",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id",
+    "usuario"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "1.2",
+   "modulo": "1",
+   "nombre": "SuperAdmin sin rol operativo y con registro en superadmins",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id",
+    "usuario"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "1.3",
+   "modulo": "1",
+   "nombre": "Administrador del taller correcto",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "1.4",
+   "modulo": "1",
+   "nombre": "Usuarios de taller sin rol (control cruzado)",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "1.5",
+   "modulo": "1",
+   "nombre": "Listado de usuarios con su rol (INNER JOIN)",
+   "kind": "info",
+   "expect": [
+    "rowsN",
+    4
+   ],
+   "columnas": [
+    "id",
+    "usuario",
+    "nombre",
+    "rol",
+    "estado"
+   ],
+   "filas": [
+    [
+     2,
+     "roberto",
+     "Roberto Díaz",
+     "Administrador",
+     "activo"
+    ],
+    [
+     3,
+     "juan",
+     "Juan Pérez",
+     "Mecanico",
+     "activo"
+    ],
+    [
+     4,
+     "pedro",
+     "Pedro Gómez",
+     "Mecanico",
+     "activo"
+    ],
+    [
+     5,
+     "carlos",
+     "Carlos López",
+     "Mecanico",
+     "pausado"
+    ]
+   ],
+   "n": 4,
+   "ok": true,
+   "obtenido": "4 fila(s)"
+  },
+  {
+   "id": "1.6",
+   "modulo": "1",
+   "nombre": "Contraseñas almacenadas como hash",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id",
+    "usuario"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "1.7",
+   "modulo": "1",
+   "nombre": "SuperAdmin no figura como rol operativo",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id",
+    "nombre"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "1.8",
+   "modulo": "1",
+   "nombre": "Alta de un mecánico",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "1.9",
+   "modulo": "1",
+   "nombre": "Pausar a un mecánico",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "1.10",
+   "modulo": "1",
+   "nombre": "Baja física de un usuario sin historial",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "1.11",
+   "modulo": "1",
+   "nombre": "Usuario duplicado rechazado",
+   "kind": "error",
+   "expect": [
+    "err",
+    1062
+   ],
+   "obtenido": "ERROR 1062",
+   "mensaje": "Duplicate entry 'juan' for key 'usuarios.uq_usuarios_usuario'",
+   "ok": true
+  },
+  {
+   "id": "1.12",
+   "modulo": "1",
+   "nombre": "SuperAdmin con rol rechazado",
+   "kind": "error",
+   "expect": [
+    "err",
+    3819
+   ],
+   "obtenido": "ERROR 3819",
+   "mensaje": "Check constraint 'ck_usuarios_tipo_rol' is violated.",
+   "ok": true
+  },
+  {
+   "id": "1.13",
+   "modulo": "1",
+   "nombre": "No se puede borrar un rol en uso",
+   "kind": "error",
+   "expect": [
+    "err",
+    1451
+   ],
+   "obtenido": "ERROR 1451",
+   "mensaje": "Cannot delete or update a parent row: a foreign key constraint fails (`taller_matienzo`.`usuarios`, CONSTRAINT `fk_usuarios_rol` FOREIGN KEY (`rol_id`",
+   "ok": true
+  },
+  {
+   "id": "1.14",
+   "modulo": "1",
+   "nombre": "Roles de MySQL = roles del frontend",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "c",
+    "a",
+    "m"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "1.15",
+   "modulo": "1",
+   "nombre": "Un único SuperAdmin, separado del taller",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "2.1",
+   "modulo": "2",
+   "nombre": "Existe un único taller",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "cantidad"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "2.2",
+   "modulo": "2",
+   "nombre": "Taller con su administrador (INNER JOIN)",
+   "kind": "info",
+   "expect": [
+    "rowsN",
+    1
+   ],
+   "columnas": [
+    "id",
+    "nombre",
+    "administrador",
+    "estado_acceso"
+   ],
+   "filas": [
+    [
+     1,
+     "Taller Matienzo",
+     "Roberto Díaz",
+     "activo"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "1 fila(s)"
+  },
+  {
+   "id": "2.3",
+   "modulo": "2",
+   "nombre": "Segundo taller rechazado",
+   "kind": "error",
+   "expect": [
+    "err",
+    3819
+   ],
+   "obtenido": "ERROR 3819",
+   "mensaje": "Check constraint 'ck_taller_unico' is violated.",
+   "ok": true
+  },
+  {
+   "id": "2.4",
+   "modulo": "2",
+   "nombre": "Bloqueo y desbloqueo del taller",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "3.1",
+   "modulo": "3",
+   "nombre": "Vehículos con propietario válido",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "3.2",
+   "modulo": "3",
+   "nombre": "Patentes duplicadas",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "patente",
+    "veces"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "3.3",
+   "modulo": "3",
+   "nombre": "Clientes con sus vehículos (INNER JOIN)",
+   "kind": "info",
+   "expect": [
+    "rowsN",
+    17
+   ],
+   "columnas": [
+    "cliente_id",
+    "nombre",
+    "patente",
+    "marca",
+    "modelo"
+   ],
+   "filas": [
+    [
+     1,
+     "Carlos Gómez",
+     "AB123CD",
+     "Fiat",
+     "Palio"
+    ],
+    [
+     1,
+     "Carlos Gómez",
+     "AE456FG",
+     "Renault",
+     "Kangoo"
+    ],
+    [
+     2,
+     "María López",
+     "AC789HI",
+     "Volkswagen",
+     "Gol"
+    ],
+    [
+     3,
+     "Jorge Ramírez",
+     "AA321JK",
+     "Ford",
+     "Fiesta"
+    ],
+    [
+     4,
+     "Laura Fernández",
+     "AD456EF",
+     "Renault",
+     "Clio"
+    ],
+    [
+     5,
+     "Ana Torres",
+     "AA100FK",
+     "Peugeot",
+     "208"
+    ],
+    [
+     6,
+     "Luis Medina",
+     "AB111GL",
+     "Toyota",
+     "Etios"
+    ],
+    [
+     7,
+     "Marta Ruiz",
+     "AC122HM",
+     "Chevrolet",
+     "Onix"
+    ],
+    [
+     8,
+     "Diego Sosa",
+     "AD133IN",
+     "Renault",
+     "Sandero"
+    ],
+    [
+     9,
+     "Paula Ríos",
+     "AE144JO",
+     "Ford",
+     "Focus"
+    ],
+    [
+     10,
+     "Hugo Acosta",
+     "AF155KP",
+     "Volkswagen",
+     "Voyage"
+    ],
+    [
+     11,
+     "Elena Vega",
+     "AG166LQ",
+     "Fiat",
+     "Uno"
+    ],
+    [
+     12,
+     "Raúl Herrera",
+     "AH177MR",
+     "Nissan",
+     "March"
+    ],
+    [
+     13,
+     "Nadia Castro",
+     "AI188NS",
+     "Citroën",
+     "C3"
+    ],
+    [
+     14,
+     "Sergio Molina",
+     "AJ199OT",
+     "Honda",
+     "Fit"
+    ],
+    [
+     15,
+     "Julia Ponce",
+     "AK210PK",
+     "Renault",
+     "Logan"
+    ],
+    [
+     16,
+     "Martín Aguirre",
+     "AL221QL",
+     "Ford",
+     "Ka"
+    ]
+   ],
+   "n": 17,
+   "ok": true,
+   "obtenido": "17 fila(s)"
+  },
+  {
+   "id": "3.4",
+   "modulo": "3",
+   "nombre": "Clientes sin vehículos (LEFT JOIN)",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id",
+    "nombre"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "3.5",
+   "modulo": "3",
+   "nombre": "Alta de cliente con vehículo",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "3.6",
+   "modulo": "3",
+   "nombre": "Actualizar kilometraje",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "3.7",
+   "modulo": "3",
+   "nombre": "Eliminar cliente nuevo y su vehículo",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "3.8",
+   "modulo": "3",
+   "nombre": "No se puede borrar un cliente con vehículos",
+   "kind": "error",
+   "expect": [
+    "err",
+    1451
+   ],
+   "obtenido": "ERROR 1451",
+   "mensaje": "Cannot delete or update a parent row: a foreign key constraint fails (`taller_matienzo`.`consultas`, CONSTRAINT `fk_consultas_cliente` FOREIGN KEY (`c",
+   "ok": true
+  },
+  {
+   "id": "3.9",
+   "modulo": "3",
+   "nombre": "Patente duplicada rechazada",
+   "kind": "error",
+   "expect": [
+    "err",
+    1062
+   ],
+   "obtenido": "ERROR 1062",
+   "mensaje": "Duplicate entry 'AA100FK' for key 'vehiculos.uq_vehiculos_patente'",
+   "ok": true
+  },
+  {
+   "id": "4.1",
+   "modulo": "4",
+   "nombre": "Consultas con cliente y vehículo coherentes",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "4.2",
+   "modulo": "4",
+   "nombre": "Detalles de consulta con consulta existente",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "4.3",
+   "modulo": "4",
+   "nombre": "Consultas con cliente y vehículo (INNER JOIN)",
+   "kind": "info",
+   "expect": [
+    "rowsN",
+    20
+   ],
+   "columnas": [
+    "id",
+    "cliente",
+    "patente",
+    "marca",
+    "modelo",
+    "estado"
+   ],
+   "filas": [
+    [
+     1,
+     "Carlos Gómez",
+     "AB123CD",
+     "Fiat",
+     "Palio",
+     "aprobada"
+    ],
+    [
+     2,
+     "María López",
+     "AC789HI",
+     "Volkswagen",
+     "Gol",
+     "aprobada"
+    ],
+    [
+     3,
+     "Laura Fernández",
+     "AD456EF",
+     "Renault",
+     "Clio",
+     "aprobada"
+    ],
+    [
+     4,
+     "Jorge Ramírez",
+     "AA321JK",
+     "Ford",
+     "Fiesta",
+     "esperando_respuesta"
+    ],
+    [
+     6,
+     "Ana Torres",
+     "AA100FK",
+     "Peugeot",
+     "208",
+     "cerrada"
+    ],
+    [
+     7,
+     "Luis Medina",
+     "AB111GL",
+     "Toyota",
+     "Etios",
+     "cerrada"
+    ],
+    [
+     8,
+     "Marta Ruiz",
+     "AC122HM",
+     "Chevrolet",
+     "Onix",
+     "cerrada"
+    ],
+    [
+     9,
+     "Diego Sosa",
+     "AD133IN",
+     "Renault",
+     "Sandero",
+     "cerrada"
+    ],
+    [
+     10,
+     "Paula Ríos",
+     "AE144JO",
+     "Ford",
+     "Focus",
+     "cerrada"
+    ],
+    [
+     11,
+     "Hugo Acosta",
+     "AF155KP",
+     "Volkswagen",
+     "Voyage",
+     "cerrada"
+    ],
+    [
+     12,
+     "Elena Vega",
+     "AG166LQ",
+     "Fiat",
+     "Uno",
+     "cerrada"
+    ],
+    [
+     13,
+     "Raúl Herrera",
+     "AH177MR",
+     "Nissan",
+     "March",
+     "cerrada"
+    ],
+    [
+     14,
+     "Paula Ríos",
+     "AE144JO",
+     "Ford",
+     "Focus",
+     "aprobada"
+    ],
+    [
+     15,
+     "Hugo Acosta",
+     "AF155KP",
+     "Volkswagen",
+     "Voyage",
+     "aprobada"
+    ],
+    [
+     16,
+     "Elena Vega",
+     "AG166LQ",
+     "Fiat",
+     "Uno",
+     "aprobada"
+    ],
+    [
+     17,
+     "Raúl Herrera",
+     "AH177MR",
+     "Nissan",
+     "March",
+     "aprobada"
+    ],
+    [
+     18,
+     "Nadia Castro",
+     "AI188NS",
+     "Citroën",
+     "C3",
+     "aprobada"
+    ],
+    [
+     19,
+     "Sergio Molina",
+     "AJ199OT",
+     "Honda",
+     "Fit",
+     "aprobada"
+    ],
+    [
+     20,
+     "Julia Ponce",
+     "AK210PK",
+     "Renault",
+     "Logan",
+     "aprobada"
+    ],
+    [
+     21,
+     "Martín Aguirre",
+     "AL221QL",
+     "Ford",
+     "Ka",
+     "aprobada"
+    ]
+   ],
+   "n": 20,
+   "ok": true,
+   "obtenido": "20 fila(s)"
+  },
+  {
+   "id": "4.4",
+   "modulo": "4",
+   "nombre": "Solo la primera consulta de un cliente es gratuita",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "4.5",
+   "modulo": "4",
+   "nombre": "Consultas cerradas con motivo",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "4.6",
+   "modulo": "4",
+   "nombre": "Consultas aprobadas tienen presupuesto aceptado",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "4.7",
+   "modulo": "4",
+   "nombre": "Alta de consulta con revisión técnica",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "4.8",
+   "modulo": "4",
+   "nombre": "Cierre de consulta sin trabajo",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "4.9",
+   "modulo": "4",
+   "nombre": "Eliminar consulta y sus detalles",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "4.10",
+   "modulo": "4",
+   "nombre": "Cobro \"cobrar\" sin importe rechazado",
+   "kind": "error",
+   "expect": [
+    "err",
+    3819
+   ],
+   "obtenido": "ERROR 3819",
+   "mensaje": "Check constraint 'ck_consultas_cobro' is violated.",
+   "ok": true
+  },
+  {
+   "id": "5.1",
+   "modulo": "5",
+   "nombre": "Un presupuesto por consulta",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "consulta_id",
+    "cantidad"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "5.2",
+   "modulo": "5",
+   "nombre": "Total calculado = suma de los detalles",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id",
+    "total_calculado",
+    "suma"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "5.3",
+   "modulo": "5",
+   "nombre": "Presupuestos enviados/aceptados con fecha de envío",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "5.4",
+   "modulo": "5",
+   "nombre": "Presupuesto con detalles (INNER JOIN)",
+   "kind": "info",
+   "expect": [
+    "rowsN",
+    12
+   ],
+   "columnas": [
+    "numero",
+    "estado",
+    "lineas",
+    "total"
+   ],
+   "filas": [
+    [
+     "PRE-0001",
+     "aceptado",
+     3,
+     "75000.00"
+    ],
+    [
+     "PRE-0002",
+     "aceptado",
+     2,
+     "70000.00"
+    ],
+    [
+     "PRE-0003",
+     "aceptado",
+     3,
+     "66500.00"
+    ],
+    [
+     "PRE-0004",
+     "enviado",
+     2,
+     "200000.00"
+    ],
+    [
+     "PRE-0005",
+     "aceptado",
+     2,
+     "40000.00"
+    ],
+    [
+     "PRE-0006",
+     "aceptado",
+     2,
+     "45000.00"
+    ],
+    [
+     "PRE-0007",
+     "aceptado",
+     2,
+     "50000.00"
+    ],
+    [
+     "PRE-0008",
+     "aceptado",
+     2,
+     "55000.00"
+    ],
+    [
+     "PRE-0009",
+     "aceptado",
+     2,
+     "60000.00"
+    ],
+    [
+     "PRE-0010",
+     "aceptado",
+     2,
+     "65000.00"
+    ],
+    [
+     "PRE-0011",
+     "aceptado",
+     2,
+     "70000.00"
+    ],
+    [
+     "PRE-0012",
+     "aceptado",
+     2,
+     "75000.00"
+    ]
+   ],
+   "n": 12,
+   "ok": true,
+   "obtenido": "12 fila(s)"
+  },
+  {
+   "id": "5.5",
+   "modulo": "5",
+   "nombre": "Presupuestos aceptados con orden / órdenes con presupuesto aceptado",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "5.6",
+   "modulo": "5",
+   "nombre": "Alta de presupuesto con detalles",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "5.7",
+   "modulo": "5",
+   "nombre": "Aceptación de un presupuesto",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "5.8",
+   "modulo": "5",
+   "nombre": "Eliminar presupuesto: sus detalles se borran en cascada",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "5.9",
+   "modulo": "5",
+   "nombre": "Segundo presupuesto para una consulta rechazado",
+   "kind": "error",
+   "expect": [
+    "err",
+    1062
+   ],
+   "obtenido": "ERROR 1062",
+   "mensaje": "Duplicate entry '1' for key 'presupuestos.uq_presupuestos_consulta'",
+   "ok": true
+  },
+  {
+   "id": "5.10",
+   "modulo": "5",
+   "nombre": "Línea con cantidad 0 rechazada",
+   "kind": "error",
+   "expect": [
+    "err",
+    3819
+   ],
+   "obtenido": "ERROR 3819",
+   "mensaje": "Check constraint 'ck_detpres_valores' is violated.",
+   "ok": true
+  },
+  {
+   "id": "5.11",
+   "modulo": "5",
+   "nombre": "No se puede escribir la columna calculada monto",
+   "kind": "error",
+   "expect": [
+    "err",
+    3105
+   ],
+   "obtenido": "ERROR 3105",
+   "mensaje": "The value specified for generated column 'monto' in table 'detalles_presupuestos' is not allowed.",
+   "ok": true
+  },
+  {
+   "id": "6.1",
+   "modulo": "6",
+   "nombre": "Una orden por presupuesto",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "presupuesto_id",
+    "COUNT(*)"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "6.2",
+   "modulo": "6",
+   "nombre": "Cliente y vehículo de la orden coinciden con la consulta",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "6.3",
+   "modulo": "6",
+   "nombre": "Precio final de la orden = precio final del presupuesto",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "6.4",
+   "modulo": "6",
+   "nombre": "Estados y mecánico",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id",
+    "estado"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "6.5",
+   "modulo": "6",
+   "nombre": "Último estado del historial = estado de la orden",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id",
+    "estado",
+    "estado_nuevo"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "6.6",
+   "modulo": "6",
+   "nombre": "Fechas de inicio y fin según estado",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id",
+    "estado"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "6.7",
+   "modulo": "6",
+   "nombre": "Órdenes con cliente, vehículo y mecánico (INNER JOIN)",
+   "kind": "info",
+   "expect": [
+    "rowsN",
+    11
+   ],
+   "columnas": [
+    "numero",
+    "cliente",
+    "marca",
+    "modelo",
+    "mecanico",
+    "estado"
+   ],
+   "filas": [
+    [
+     "OT-0001",
+     "Carlos Gómez",
+     "Fiat",
+     "Palio",
+     "Juan Pérez",
+     "finalizado"
+    ],
+    [
+     "OT-0002",
+     "María López",
+     "Volkswagen",
+     "Gol",
+     "Juan Pérez",
+     "ofrecido"
+    ],
+    [
+     "OT-0003",
+     "Laura Fernández",
+     "Renault",
+     "Clio",
+     "Pedro Gómez",
+     "en_proceso"
+    ],
+    [
+     "OT-0004",
+     "Paula Ríos",
+     "Ford",
+     "Focus",
+     "Juan Pérez",
+     "finalizado"
+    ],
+    [
+     "OT-0005",
+     "Hugo Acosta",
+     "Volkswagen",
+     "Voyage",
+     "Pedro Gómez",
+     "finalizado"
+    ],
+    [
+     "OT-0006",
+     "Elena Vega",
+     "Fiat",
+     "Uno",
+     "Juan Pérez",
+     "finalizado"
+    ],
+    [
+     "OT-0007",
+     "Raúl Herrera",
+     "Nissan",
+     "March",
+     "Pedro Gómez",
+     "finalizado"
+    ],
+    [
+     "OT-0008",
+     "Nadia Castro",
+     "Citroën",
+     "C3",
+     "Juan Pérez",
+     "finalizado"
+    ],
+    [
+     "OT-0009",
+     "Sergio Molina",
+     "Honda",
+     "Fit",
+     "Pedro Gómez",
+     "finalizado"
+    ],
+    [
+     "OT-0010",
+     "Julia Ponce",
+     "Renault",
+     "Logan",
+     "Juan Pérez",
+     "finalizado"
+    ],
+    [
+     "OT-0011",
+     "Martín Aguirre",
+     "Ford",
+     "Ka",
+     "Pedro Gómez",
+     "finalizado"
+    ]
+   ],
+   "n": 11,
+   "ok": true,
+   "obtenido": "11 fila(s)"
+  },
+  {
+   "id": "6.8",
+   "modulo": "6",
+   "nombre": "Avances con orden y autor válidos",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "6.9",
+   "modulo": "6",
+   "nombre": "Avances registrados (INNER JOIN)",
+   "kind": "info",
+   "expect": [
+    "rowsN",
+    10
+   ],
+   "columnas": [
+    "numero",
+    "nombre",
+    "texto",
+    "creado_en"
+   ],
+   "filas": [
+    [
+     "OT-0001",
+     "Juan Pérez",
+     "Se drenó el aceite y se reemplazó el filtro.",
+     "2026-11-06 10:10:00"
+    ],
+    [
+     "OT-0003",
+     "Pedro Gómez",
+     "Se cambiaron las bujías. Falta el filtro de aire (poco stock).",
+     "2026-11-19 16:00:00"
+    ],
+    [
+     "OT-0004",
+     "Juan Pérez",
+     "Trabajo realizado y probado en ruta.",
+     "2026-10-30 11:00:00"
+    ],
+    [
+     "OT-0005",
+     "Pedro Gómez",
+     "Trabajo realizado y probado en ruta.",
+     "2026-11-01 11:00:00"
+    ],
+    [
+     "OT-0006",
+     "Juan Pérez",
+     "Trabajo realizado y probado en ruta.",
+     "2026-11-03 11:00:00"
+    ],
+    [
+     "OT-0007",
+     "Pedro Gómez",
+     "Trabajo realizado y probado en ruta.",
+     "2026-11-05 11:00:00"
+    ],
+    [
+     "OT-0008",
+     "Juan Pérez",
+     "Trabajo realizado y probado en ruta.",
+     "2026-11-07 11:00:00"
+    ],
+    [
+     "OT-0009",
+     "Pedro Gómez",
+     "Trabajo realizado y probado en ruta.",
+     "2026-11-09 11:00:00"
+    ],
+    [
+     "OT-0010",
+     "Juan Pérez",
+     "Trabajo realizado y probado en ruta.",
+     "2026-11-11 11:00:00"
+    ],
+    [
+     "OT-0011",
+     "Pedro Gómez",
+     "Trabajo realizado y probado en ruta.",
+     "2026-11-13 11:00:00"
+    ]
+   ],
+   "n": 10,
+   "ok": true,
+   "obtenido": "10 fila(s)"
+  },
+  {
+   "id": "6.10",
+   "modulo": "6",
+   "nombre": "Cambio de estado con historial y avance",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "6.11",
+   "modulo": "6",
+   "nombre": "Eliminar orden nueva: historial y avances en cascada",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "6.12",
+   "modulo": "6",
+   "nombre": "Segunda orden para un presupuesto rechazada",
+   "kind": "error",
+   "expect": [
+    "err",
+    1062
+   ],
+   "obtenido": "ERROR 1062",
+   "mensaje": "Duplicate entry '1' for key 'ordenes_trabajo.uq_ordenes_presupuesto'",
+   "ok": true
+  },
+  {
+   "id": "6.13",
+   "modulo": "6",
+   "nombre": "Comisión mayor a 100 % rechazada",
+   "kind": "error",
+   "expect": [
+    "err",
+    3819
+   ],
+   "obtenido": "ERROR 3819",
+   "mensaje": "Check constraint 'ck_ordenes_importes' is violated.",
+   "ok": true
+  },
+  {
+   "id": "7.1",
+   "modulo": "7",
+   "nombre": "Asignación activa coincide con el mecánico de la orden",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "7.2",
+   "modulo": "7",
+   "nombre": "Una sola asignación activa por orden",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "orden_id",
+    "COUNT(*)"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "7.3",
+   "modulo": "7",
+   "nombre": "Rechazos con motivo",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "7.4",
+   "modulo": "7",
+   "nombre": "Asignaciones con orden y mecánico (INNER JOIN)",
+   "kind": "info",
+   "expect": [
+    "rowsN",
+    11
+   ],
+   "columnas": [
+    "numero",
+    "mecanico",
+    "resultado",
+    "creado_en",
+    "resuelto_en"
+   ],
+   "filas": [
+    [
+     "OT-0001",
+     "Juan Pérez",
+     "aceptada",
+     "2026-11-05 09:00:00",
+     "2026-11-05 10:00:00"
+    ],
+    [
+     "OT-0002",
+     "Juan Pérez",
+     "ofrecida",
+     "2026-11-19 09:00:00",
+     null
+    ],
+    [
+     "OT-0003",
+     "Pedro Gómez",
+     "aceptada",
+     "2026-11-15 09:00:00",
+     "2026-11-15 11:00:00"
+    ],
+    [
+     "OT-0004",
+     "Juan Pérez",
+     "aceptada",
+     "2026-10-28 09:00:00",
+     "2026-10-28 10:00:00"
+    ],
+    [
+     "OT-0005",
+     "Pedro Gómez",
+     "aceptada",
+     "2026-10-30 09:00:00",
+     "2026-10-30 10:00:00"
+    ],
+    [
+     "OT-0006",
+     "Juan Pérez",
+     "aceptada",
+     "2026-11-01 09:00:00",
+     "2026-11-01 10:00:00"
+    ],
+    [
+     "OT-0007",
+     "Pedro Gómez",
+     "aceptada",
+     "2026-11-03 09:00:00",
+     "2026-11-03 10:00:00"
+    ],
+    [
+     "OT-0008",
+     "Juan Pérez",
+     "aceptada",
+     "2026-11-05 09:00:00",
+     "2026-11-05 10:00:00"
+    ],
+    [
+     "OT-0009",
+     "Pedro Gómez",
+     "aceptada",
+     "2026-11-07 09:00:00",
+     "2026-11-07 10:00:00"
+    ],
+    [
+     "OT-0010",
+     "Juan Pérez",
+     "aceptada",
+     "2026-11-09 09:00:00",
+     "2026-11-09 10:00:00"
+    ],
+    [
+     "OT-0011",
+     "Pedro Gómez",
+     "aceptada",
+     "2026-11-11 09:00:00",
+     "2026-11-11 10:00:00"
+    ]
+   ],
+   "n": 11,
+   "ok": true,
+   "obtenido": "11 fila(s)"
+  },
+  {
+   "id": "7.5",
+   "modulo": "7",
+   "nombre": "Rechazo y reasignación",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "7.6",
+   "modulo": "7",
+   "nombre": "Asignar a un mecánico inexistente rechazado",
+   "kind": "error",
+   "expect": [
+    "err",
+    1452
+   ],
+   "obtenido": "ERROR 1452",
+   "mensaje": "Cannot add or update a child row: a foreign key constraint fails (`taller_matienzo`.`asignaciones_trabajo`, CONSTRAINT `fk_asig_mecanico` FOREIGN KEY ",
+   "ok": true
+  },
+  {
+   "id": "8.1",
+   "modulo": "8",
+   "nombre": "Pagos de trabajo con orden; venta de mostrador sin orden",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "8.2",
+   "modulo": "8",
+   "nombre": "Monto del pago = suma de sus medios",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "8.3",
+   "modulo": "8",
+   "nombre": "Método combinado ↔ dos medios",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "8.4",
+   "modulo": "8",
+   "nombre": "Cliente del pago = cliente de la orden",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "8.5",
+   "modulo": "8",
+   "nombre": "Lo pagado no supera el precio de la orden",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id",
+    "precio_final",
+    "pagado"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "8.6",
+   "modulo": "8",
+   "nombre": "Saldo por orden (INNER JOIN)",
+   "kind": "info",
+   "expect": [
+    "rowsgt"
+   ],
+   "columnas": [
+    "numero",
+    "nombre",
+    "precio_final",
+    "pagado",
+    "saldo"
+   ],
+   "filas": [
+    [
+     "OT-0001",
+     "Carlos Gómez",
+     "75000.00",
+     "40000.00",
+     "35000.00"
+    ],
+    [
+     "OT-0004",
+     "Paula Ríos",
+     "40000.00",
+     "40000.00",
+     "0.00"
+    ],
+    [
+     "OT-0005",
+     "Hugo Acosta",
+     "45000.00",
+     "45000.00",
+     "0.00"
+    ],
+    [
+     "OT-0006",
+     "Elena Vega",
+     "50000.00",
+     "50000.00",
+     "0.00"
+    ],
+    [
+     "OT-0007",
+     "Raúl Herrera",
+     "55000.00",
+     "55000.00",
+     "0.00"
+    ],
+    [
+     "OT-0008",
+     "Nadia Castro",
+     "60000.00",
+     "60000.00",
+     "0.00"
+    ],
+    [
+     "OT-0009",
+     "Sergio Molina",
+     "65000.00",
+     "65000.00",
+     "0.00"
+    ]
+   ],
+   "n": 7,
+   "ok": true,
+   "obtenido": "7 fila(s)"
+  },
+  {
+   "id": "8.7",
+   "modulo": "8",
+   "nombre": "Registrar un pago combinado",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "8.8",
+   "modulo": "8",
+   "nombre": "Corregir el monto de un pago (UPDATE)",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "8.9",
+   "modulo": "8",
+   "nombre": "Eliminar un pago: sus medios se borran en cascada",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "8.10",
+   "modulo": "8",
+   "nombre": "Pago con monto 0 rechazado",
+   "kind": "error",
+   "expect": [
+    "err",
+    3819
+   ],
+   "obtenido": "ERROR 3819",
+   "mensaje": "Check constraint 'ck_pagcli_monto' is violated.",
+   "ok": true
+  },
+  {
+   "id": "8.11",
+   "modulo": "8",
+   "nombre": "Medio repetido en un pago rechazado",
+   "kind": "error",
+   "expect": [
+    "err",
+    1062
+   ],
+   "obtenido": "ERROR 1062",
+   "mensaje": "Duplicate entry '1-efectivo' for key 'detalles_pagos_clientes.uq_detpagcli_medio'",
+   "ok": true
+  },
+  {
+   "id": "9.1",
+   "modulo": "9",
+   "nombre": "Artículos con categoría",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "9.2",
+   "modulo": "9",
+   "nombre": "Movimientos confirmados con responsable",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "9.3",
+   "modulo": "9",
+   "nombre": "Salidas por orden con orden existente",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "9.4",
+   "modulo": "9",
+   "nombre": "Artículos con stock bajo",
+   "kind": "info",
+   "expect": [
+    "rowsgt"
+   ],
+   "columnas": [
+    "id",
+    "codigo",
+    "nombre",
+    "cantidad",
+    "stock_minimo"
+   ],
+   "filas": [
+    [
+     6,
+     "COR-DIS",
+     "Correa de distribución",
+     3,
+     3
+    ],
+    [
+     3,
+     "FIL-AIR",
+     "Filtro de aire",
+     4,
+     5
+    ]
+   ],
+   "n": 2,
+   "ok": true,
+   "obtenido": "2 fila(s)"
+  },
+  {
+   "id": "9.5",
+   "modulo": "9",
+   "nombre": "Stock actual = entradas − salidas confirmadas",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id",
+    "codigo",
+    "cantidad",
+    "segun_movimientos"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "9.6",
+   "modulo": "9",
+   "nombre": "Historial de precios coherente",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "9.7",
+   "modulo": "9",
+   "nombre": "Artículos con su categoría (INNER JOIN)",
+   "kind": "info",
+   "expect": [
+    "rowsN",
+    17
+   ],
+   "columnas": [
+    "categoria",
+    "codigo",
+    "nombre",
+    "marca",
+    "cantidad",
+    "precio_venta"
+   ],
+   "filas": [
+    [
+     "Correas",
+     "COR-ALT",
+     "Correa de alternador",
+     "Gates",
+     7,
+     "11000.00"
+    ],
+    [
+     "Correas",
+     "COR-DIS",
+     "Correa de distribución",
+     "Gates",
+     3,
+     "28000.00"
+    ],
+    [
+     "Encendido",
+     "BAT-60",
+     "Batería 60 Ah",
+     "Moura",
+     4,
+     "105000.00"
+    ],
+    [
+     "Encendido",
+     "BUJ-STD",
+     "Bujías (unidad)",
+     "NGK",
+     26,
+     "4500.00"
+    ],
+    [
+     "Filtros",
+     "FIL-OIL",
+     "Filtro de aceite",
+     "Mann",
+     11,
+     "7000.00"
+    ],
+    [
+     "Filtros",
+     "FIL-AIR",
+     "Filtro de aire",
+     "Mann",
+     4,
+     "8500.00"
+    ],
+    [
+     "Filtros",
+     "FIL-COM",
+     "Filtro de combustible",
+     "Mann",
+     8,
+     "7500.00"
+    ],
+    [
+     "Frenos",
+     "AMO-DEL",
+     "Amortiguador delantero",
+     "Cofap",
+     3,
+     "52000.00"
+    ],
+    [
+     "Frenos",
+     "DIS-DEL",
+     "Disco de freno delantero",
+     "Fremax",
+     5,
+     "38000.00"
+    ],
+    [
+     "Frenos",
+     "PAS-DEL",
+     "Pastillas de freno delanteras",
+     "Fras-le",
+     8,
+     "32000.00"
+    ],
+    [
+     "Frenos",
+     "PAS-TRA",
+     "Pastillas de freno traseras",
+     "Fras-le",
+     6,
+     "26000.00"
+    ],
+    [
+     "Iluminación",
+     "LAM-H4",
+     "Lámpara H4",
+     "Osram",
+     14,
+     "6000.00"
+    ],
+    [
+     "Iluminación",
+     "LAM-H7",
+     "Lámpara H7",
+     "Osram",
+     12,
+     "6500.00"
+    ],
+    [
+     "Líquidos",
+     "LIQ-FRE",
+     "Líquido de frenos",
+     null,
+     13,
+     "7000.00"
+    ],
+    [
+     "Líquidos",
+     "LIQ-REF",
+     "Líquido refrigerante (litro)",
+     null,
+     9,
+     "9000.00"
+    ],
+    [
+     "Lubricantes",
+     "ACE-1040",
+     "Aceite 10W40 (litro)",
+     "Elaion",
+     28,
+     "14000.00"
+    ],
+    [
+     "Lubricantes",
+     "ACE-5W30",
+     "Aceite 5W30 (litro)",
+     "Elaion",
+     19,
+     "16000.00"
+    ]
+   ],
+   "n": 17,
+   "ok": true,
+   "obtenido": "17 fila(s)"
+  },
+  {
+   "id": "9.8",
+   "modulo": "9",
+   "nombre": "Registrar salida de stock por una orden",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "9.9",
+   "modulo": "9",
+   "nombre": "Eliminar un artículo sin movimientos",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "9.10",
+   "modulo": "9",
+   "nombre": "Stock negativo rechazado",
+   "kind": "error",
+   "expect": [
+    "err",
+    3819
+   ],
+   "obtenido": "ERROR 3819",
+   "mensaje": "Check constraint 'ck_catalogo_stock' is violated.",
+   "ok": true
+  },
+  {
+   "id": "9.11",
+   "modulo": "9",
+   "nombre": "Código de artículo duplicado rechazado",
+   "kind": "error",
+   "expect": [
+    "err",
+    1062
+   ],
+   "obtenido": "ERROR 1062",
+   "mensaje": "Duplicate entry 'ACE-1040' for key 'catalogo_items.uq_catalogo_codigo'",
+   "ok": true
+  },
+  {
+   "id": "9.12",
+   "modulo": "9",
+   "nombre": "Movimiento sin artículo ni descripción rechazado",
+   "kind": "error",
+   "expect": [
+    "err",
+    3819
+   ],
+   "obtenido": "ERROR 3819",
+   "mensaje": "Check constraint 'ck_movstock_descripcion' is violated.",
+   "ok": true
+  },
+  {
+   "id": "10.1",
+   "modulo": "10",
+   "nombre": "Movimientos de usuarios con rol Mecánico",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "10.2",
+   "modulo": "10",
+   "nombre": "Comisión con orden finalizada del mismo mecánico",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "10.3",
+   "modulo": "10",
+   "nombre": "Comisión = mano de obra × comision_pct ÷ 100 (sin repuestos)",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id",
+    "monto",
+    "esperado"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "10.4",
+   "modulo": "10",
+   "nombre": "Movimientos con mecánico y orden (INNER JOIN)",
+   "kind": "info",
+   "expect": [
+    "rowsN",
+    7
+   ],
+   "columnas": [
+    "nombre",
+    "tipo",
+    "monto",
+    "numero",
+    "fecha"
+   ],
+   "filas": [
+    [
+     "Juan Pérez",
+     "comision",
+     "3600.00",
+     "OT-0001",
+     "2026-11-06 12:00:00"
+    ],
+    [
+     "Juan Pérez",
+     "comision",
+     "7500.00",
+     "OT-0004",
+     "2026-10-30 12:00:00"
+    ],
+    [
+     "Juan Pérez",
+     "comision",
+     "10500.00",
+     "OT-0006",
+     "2026-11-03 12:00:00"
+    ],
+    [
+     "Pedro Gómez",
+     "comision",
+     "9000.00",
+     "OT-0005",
+     "2026-11-01 12:00:00"
+    ],
+    [
+     "Pedro Gómez",
+     "comision",
+     "12000.00",
+     "OT-0007",
+     "2026-11-05 12:00:00"
+    ],
+    [
+     "Juan Pérez",
+     "adelanto",
+     "5000.00",
+     null,
+     "2026-11-04 09:00:00"
+    ],
+    [
+     "Pedro Gómez",
+     "adelanto",
+     "8000.00",
+     null,
+     "2026-11-02 09:00:00"
+    ]
+   ],
+   "n": 7,
+   "ok": true,
+   "obtenido": "7 fila(s)"
+  },
+  {
+   "id": "10.5",
+   "modulo": "10",
+   "nombre": "Registrar un adelanto",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "10.6",
+   "modulo": "10",
+   "nombre": "Movimiento con monto 0 rechazado",
+   "kind": "error",
+   "expect": [
+    "err",
+    3819
+   ],
+   "obtenido": "ERROR 3819",
+   "mensaje": "Check constraint 'ck_movmec_monto' is violated.",
+   "ok": true
+  },
+  {
+   "id": "10.7",
+   "modulo": "10",
+   "nombre": "Calcular y registrar una comisión sobre la mano de obra",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "10.8",
+   "modulo": "10",
+   "nombre": "Segunda comisión para la misma orden rechazada",
+   "kind": "error",
+   "expect": [
+    "err",
+    1062
+   ],
+   "obtenido": "ERROR 1062",
+   "mensaje": "Duplicate entry '1-comision' for key 'movimientos_mecanicos.uq_movmec_orden_tipo'",
+   "ok": true
+  },
+  {
+   "id": "10.9",
+   "modulo": "10",
+   "nombre": "Comisión sin orden / adelanto con orden rechazados",
+   "kind": "error",
+   "expect": [
+    "err",
+    3819
+   ],
+   "obtenido": "ERROR 3819",
+   "mensaje": "Check constraint 'ck_movmec_tipo_orden' is violated.",
+   "ok": true
+  },
+  {
+   "id": "11.1",
+   "modulo": "11",
+   "nombre": "Total a pagar = comisiones − adelantos",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "11.2",
+   "modulo": "11",
+   "nombre": "Totales = suma de los detalles",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "11.3",
+   "modulo": "11",
+   "nombre": "Movimientos del mismo mecánico y dentro del período",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "11.4",
+   "modulo": "11",
+   "nombre": "Un movimiento en una sola liquidación",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "movimiento_mecanico_id",
+    "COUNT(*)"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "11.5",
+   "modulo": "11",
+   "nombre": "Liquidación con detalles (INNER JOIN)",
+   "kind": "info",
+   "expect": [
+    "rowsN",
+    7
+   ],
+   "columnas": [
+    "id",
+    "nombre",
+    "tipo",
+    "importe_incluido",
+    "total_a_pagar",
+    "estado"
+   ],
+   "filas": [
+    [
+     1,
+     "Juan Pérez",
+     "comision",
+     "3600.00",
+     "16600.00",
+     "pagada"
+    ],
+    [
+     1,
+     "Juan Pérez",
+     "comision",
+     "7500.00",
+     "16600.00",
+     "pagada"
+    ],
+    [
+     1,
+     "Juan Pérez",
+     "comision",
+     "10500.00",
+     "16600.00",
+     "pagada"
+    ],
+    [
+     1,
+     "Juan Pérez",
+     "adelanto",
+     "5000.00",
+     "16600.00",
+     "pagada"
+    ],
+    [
+     3,
+     "Pedro Gómez",
+     "comision",
+     "9000.00",
+     "13000.00",
+     "pendiente"
+    ],
+    [
+     3,
+     "Pedro Gómez",
+     "comision",
+     "12000.00",
+     "13000.00",
+     "pendiente"
+    ],
+    [
+     3,
+     "Pedro Gómez",
+     "adelanto",
+     "8000.00",
+     "13000.00",
+     "pendiente"
+    ]
+   ],
+   "n": 7,
+   "ok": true,
+   "obtenido": "7 fila(s)"
+  },
+  {
+   "id": "11.6",
+   "modulo": "11",
+   "nombre": "Pagar una liquidación",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "11.7",
+   "modulo": "11",
+   "nombre": "Anular una liquidación pendiente y liberar sus movimientos",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "11.8",
+   "modulo": "11",
+   "nombre": "Movimiento liquidado dos veces rechazado",
+   "kind": "error",
+   "expect": [
+    "err",
+    1062
+   ],
+   "obtenido": "ERROR 1062",
+   "mensaje": "Duplicate entry '1' for key 'detalles_liquidaciones_mecanicos.uq_detliq_movimiento'",
+   "ok": true
+  },
+  {
+   "id": "11.9",
+   "modulo": "11",
+   "nombre": "Período invertido rechazado",
+   "kind": "error",
+   "expect": [
+    "err",
+    3819
+   ],
+   "obtenido": "ERROR 3819",
+   "mensaje": "Check constraint 'ck_liq_fechas' is violated.",
+   "ok": true
+  },
+  {
+   "id": "11.10",
+   "modulo": "11",
+   "nombre": "Liquidaciones pendientes, pagadas y anuladas",
+   "kind": "info",
+   "expect": [
+    "rowsN",
+    3
+   ],
+   "columnas": [
+    "estado",
+    "cantidad",
+    "total"
+   ],
+   "filas": [
+    [
+     "pendiente",
+     1,
+     "13000.00"
+    ],
+    [
+     "pagada",
+     1,
+     "16600.00"
+    ],
+    [
+     "anulada",
+     1,
+     "9000.00"
+    ]
+   ],
+   "n": 3,
+   "ok": true,
+   "obtenido": "3 fila(s)"
+  },
+  {
+   "id": "11.11",
+   "modulo": "11",
+   "nombre": "Estados coherentes: pagadas con fecha de pago, anuladas sin detalles",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "11.12",
+   "modulo": "11",
+   "nombre": "Los adelantos se descuentan de la liquidación",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "11.13",
+   "modulo": "11",
+   "nombre": "Total a pagar negativo rechazado",
+   "kind": "error",
+   "expect": [
+    "err",
+    3819
+   ],
+   "obtenido": "ERROR 3819",
+   "mensaje": "Check constraint 'ck_liq_importes' is violated.",
+   "ok": true
+  },
+  {
+   "id": "12.1",
+   "modulo": "12",
+   "nombre": "Períodos consecutivos sin huecos",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "12.2",
+   "modulo": "12",
+   "nombre": "Tolerancia de 3 días",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "12.3",
+   "modulo": "12",
+   "nombre": "Duración según modalidad",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "12.4",
+   "modulo": "12",
+   "nombre": "Período pagado con pago confirmado",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "12.5",
+   "modulo": "12",
+   "nombre": "Estado de la suscripción a la fecha de referencia",
+   "kind": "info",
+   "expect": [
+    "rowsN",
+    1
+   ],
+   "columnas": [
+    "numero",
+    "fecha_vencimiento",
+    "dias_al_vencimiento",
+    "acceso",
+    "estado_acceso"
+   ],
+   "filas": [
+    [
+     2,
+     "2026-12-02",
+     12,
+     "vigente",
+     "activo"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "1 fila(s)"
+  },
+  {
+   "id": "12.6",
+   "modulo": "12",
+   "nombre": "Taller bloqueado solo si venció la tolerancia",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "12.7",
+   "modulo": "12",
+   "nombre": "Renovación: informar y confirmar un pago",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "12.8",
+   "modulo": "12",
+   "nombre": "Rechazo de un pago informado",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "12.9",
+   "modulo": "12",
+   "nombre": "Tolerancia distinta de 3 días rechazada",
+   "kind": "error",
+   "expect": [
+    "err",
+    3819
+   ],
+   "obtenido": "ERROR 3819",
+   "mensaje": "Check constraint 'ck_periodo_tolerancia' is violated.",
+   "ok": true
+  },
+  {
+   "id": "12.10",
+   "modulo": "12",
+   "nombre": "Modalidad: solo mensual o anual",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "COLUMN_TYPE"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "12.11",
+   "modulo": "12",
+   "nombre": "No existe el plan trimestral",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id",
+    "modalidad"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "12.12",
+   "modulo": "12",
+   "nombre": "Modalidad anual: 12 meses y tolerancia de 3 días",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "13.1",
+   "modulo": "13",
+   "nombre": "Confirmados con SuperAdmin y fecha",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "13.2",
+   "modulo": "13",
+   "nombre": "Importe = suma de los medios",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "13.3",
+   "modulo": "13",
+   "nombre": "Método combinado ↔ dos medios",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "13.4",
+   "modulo": "13",
+   "nombre": "Pagos del sistema y de clientes están separados",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "TABLE_NAME",
+    "REFERENCED_TABLE_NAME"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "13.5",
+   "modulo": "13",
+   "nombre": "Pago del sistema con período, dueño y SuperAdmin (INNER JOIN)",
+   "kind": "info",
+   "expect": [
+    "rowsN",
+    2
+   ],
+   "columnas": [
+    "id",
+    "periodo",
+    "pagador",
+    "importe_total",
+    "metodo",
+    "estado",
+    "confirmo"
+   ],
+   "filas": [
+    [
+     1,
+     1,
+     "Roberto Díaz",
+     "30000.00",
+     "combinado",
+     "confirmado",
+     "superadmin"
+    ],
+    [
+     2,
+     2,
+     "Roberto Díaz",
+     "30000.00",
+     "transferencia",
+     "informado",
+     null
+    ]
+   ],
+   "n": 2,
+   "ok": true,
+   "obtenido": "2 fila(s)"
+  },
+  {
+   "id": "13.6",
+   "modulo": "13",
+   "nombre": "Comprobantes con pago existente",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "13.7",
+   "modulo": "13",
+   "nombre": "Medio repetido en un pago del sistema rechazado",
+   "kind": "error",
+   "expect": [
+    "err",
+    1062
+   ],
+   "obtenido": "ERROR 1062",
+   "mensaje": "Duplicate entry '1-efectivo' for key 'detalles_pagos_sistema.uq_detpagsis_medio'",
+   "ok": true
+  },
+  {
+   "id": "13.8",
+   "modulo": "13",
+   "nombre": "Medios del sistema: solo efectivo y transferencia",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "COLUMN_TYPE"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "13.9",
+   "modulo": "13",
+   "nombre": "Confirmar con un usuario que no es SuperAdmin rechazado",
+   "kind": "error",
+   "expect": [
+    "err",
+    1452
+   ],
+   "obtenido": "ERROR 1452",
+   "mensaje": "Cannot add or update a child row: a foreign key constraint fails (`taller_matienzo`.`pagos_sistema`, CONSTRAINT `fk_pagos_sistema_confirmador` FOREIGN",
+   "ok": true
+  },
+  {
+   "id": "14.1",
+   "modulo": "14",
+   "nombre": "Destinatario único",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "14.2",
+   "modulo": "14",
+   "nombre": "Notificaciones con destinatario (INNER JOIN)",
+   "kind": "info",
+   "expect": [
+    "rowsgt"
+   ],
+   "columnas": [
+    "usuario",
+    "tipo",
+    "texto",
+    "leida"
+   ],
+   "filas": [
+    [
+     "roberto",
+     "info",
+     "Trabajo finalizado: avisá al cliente. (demostración)",
+     1
+    ],
+    [
+     "roberto",
+     "info",
+     "Pago registrado. (demostración)",
+     1
+    ],
+    [
+     "roberto",
+     "info",
+     "Presupuesto aceptado. (demostración)",
+     1
+    ],
+    [
+     "roberto",
+     "info",
+     "Trabajo finalizado: avisá al cliente. (demostración)",
+     1
+    ],
+    [
+     "roberto",
+     "info",
+     "Pago registrado. (demostración)",
+     1
+    ],
+    [
+     "roberto",
+     "info",
+     "Presupuesto aceptado. (demostración)",
+     1
+    ],
+    [
+     "roberto",
+     "info",
+     "Trabajo finalizado: avisá al cliente. (demostración)",
+     1
+    ],
+    [
+     "roberto",
+     "info",
+     "Pago registrado. (demostración)",
+     1
+    ],
+    [
+     "roberto",
+     "info",
+     "Presupuesto aceptado. (demostración)",
+     1
+    ],
+    [
+     "roberto",
+     "info",
+     "Nueva consulta: Sofía Prospecto (Chevrolet Corsa).",
+     0
+    ],
+    [
+     "juan",
+     "trabajo",
+     "Nuevo trabajo asignado: OT-0002 (Volkswagen Gol).",
+     0
+    ],
+    [
+     "roberto",
+     "stock",
+     "Stock bajo: Filtro de aire (quedan 4, mínimo 5).",
+     0
+    ]
+   ],
+   "n": 12,
+   "ok": true,
+   "obtenido": "12 fila(s)"
+  },
+  {
+   "id": "14.3",
+   "modulo": "14",
+   "nombre": "Notificaciones del SuperAdmin (INNER JOIN)",
+   "kind": "info",
+   "expect": [
+    "rowsN",
+    1
+   ],
+   "columnas": [
+    "usuario",
+    "texto"
+   ],
+   "filas": [
+    [
+     "superadmin",
+     "Taller Matienzo informó un pago de $30.000 pendiente de confirmación."
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "1 fila(s)"
+  },
+  {
+   "id": "14.4",
+   "modulo": "14",
+   "nombre": "Marcar como leída",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "14.5",
+   "modulo": "14",
+   "nombre": "Crear y eliminar una notificación",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "14.6",
+   "modulo": "14",
+   "nombre": "Aviso duplicado rechazado",
+   "kind": "error",
+   "expect": [
+    "err",
+    1062
+   ],
+   "obtenido": "ERROR 1062",
+   "mensaje": "Duplicate entry 'seed:n1:u2' for key 'notificaciones.uq_notif_clave'",
+   "ok": true
+  },
+  {
+   "id": "14.7",
+   "modulo": "14",
+   "nombre": "Dos destinatarios rechazados",
+   "kind": "error",
+   "expect": [
+    "err",
+    3819
+   ],
+   "obtenido": "ERROR 3819",
+   "mensaje": "Check constraint 'ck_notif_destino' is violated.",
+   "ok": true
+  },
+  {
+   "id": "15.1",
+   "modulo": "15",
+   "nombre": "Ámbito y actor coherentes",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "15.2",
+   "modulo": "15",
+   "nombre": "actor_login coincide con el usuario",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "15.3",
+   "modulo": "15",
+   "nombre": "Detalle JSON válido",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "15.4",
+   "modulo": "15",
+   "nombre": "Actividad con su autor (INNER JOIN)",
+   "kind": "info",
+   "expect": [
+    "rowsgt"
+   ],
+   "columnas": [
+    "fecha",
+    "nombre",
+    "accion",
+    "detalle"
+   ],
+   "filas": [
+    [
+     "2026-11-19 10:00:00",
+     "Roberto Díaz",
+     "Asignó el trabajo",
+     "Registro de demostración 12"
+    ],
+    [
+     "2026-11-18 10:00:00",
+     "Roberto Díaz",
+     "Registró un pago de cliente",
+     "Registro de demostración 11"
+    ],
+    [
+     "2026-11-17 10:00:00",
+     "Roberto Díaz",
+     "Presentó un presupuesto al cliente",
+     "Registro de demostración 10"
+    ],
+    [
+     "2026-11-16 10:00:00",
+     "Roberto Díaz",
+     "Registró una consulta",
+     "Registro de demostración 9"
+    ],
+    [
+     "2026-11-15 10:00:00",
+     "Roberto Díaz",
+     "Asignó el trabajo",
+     "Registro de demostración 8"
+    ],
+    [
+     "2026-11-14 10:00:00",
+     "Roberto Díaz",
+     "Registró un pago de cliente",
+     "Registro de demostración 7"
+    ],
+    [
+     "2026-11-13 10:00:00",
+     "Roberto Díaz",
+     "Presentó un presupuesto al cliente",
+     "Registro de demostración 6"
+    ],
+    [
+     "2026-11-12 10:00:00",
+     "Roberto Díaz",
+     "Registró una consulta",
+     "Registro de demostración 5"
+    ],
+    [
+     "2026-11-11 10:00:00",
+     "Roberto Díaz",
+     "Asignó el trabajo",
+     "Registro de demostración 4"
+    ],
+    [
+     "2026-11-10 10:00:00",
+     "Roberto Díaz",
+     "Registró un pago de cliente",
+     "Registro de demostración 3"
+    ],
+    [
+     "2026-11-09 10:00:00",
+     "Roberto Díaz",
+     "Presentó un presupuesto al cliente",
+     "Registro de demostración 2"
+    ],
+    [
+     "2026-11-08 10:00:00",
+     "Roberto Díaz",
+     "Registró una consulta",
+     "Registro de demostración 1"
+    ]
+   ],
+   "n": 12,
+   "ok": true,
+   "obtenido": "12 fila(s)"
+  },
+  {
+   "id": "15.5",
+   "modulo": "15",
+   "nombre": "Registrar una acción",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "15.6",
+   "modulo": "15",
+   "nombre": "Acción de sistema con usuario de taller rechazada",
+   "kind": "error",
+   "expect": [
+    "err",
+    3819
+   ],
+   "obtenido": "ERROR 3819",
+   "mensaje": "Check constraint 'ck_auditoria_actor' is violated.",
+   "ok": true
+  },
+  {
+   "id": "16.1",
+   "modulo": "16",
+   "nombre": "Propuestas resueltas con fecha",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "16.2",
+   "modulo": "16",
+   "nombre": "Texto final según estado",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "16.3",
+   "modulo": "16",
+   "nombre": "Contexto y referencia (corregida)",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "16.4",
+   "modulo": "16",
+   "nombre": "Sin proveedores externos",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id",
+    "proveedor"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "16.5",
+   "modulo": "16",
+   "nombre": "Propuestas con autor y consulta (INNER JOIN)",
+   "kind": "info",
+   "expect": [
+    "rowsN",
+    1
+   ],
+   "columnas": [
+    "id",
+    "nombre",
+    "consulta",
+    "estado",
+    "texto_original",
+    "texto_final"
+   ],
+   "filas": [
+    [
+     1,
+     "Juan Pérez",
+     2,
+     "aceptada",
+     "el auto hace un ruido cuando freno y parece que vibra todo",
+     "Se informa un ruido al accionar los frenos, acompañado de vibraciones durante la frenada."
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "1 fila(s)"
+  },
+  {
+   "id": "16.6",
+   "modulo": "16",
+   "nombre": "Generar y aceptar una propuesta",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "16.7",
+   "modulo": "16",
+   "nombre": "Contextos de IA: sin fotografía",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "COLUMN_TYPE"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "16.8",
+   "modulo": "16",
+   "nombre": "El texto original siempre se conserva",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "16.9",
+   "modulo": "16",
+   "nombre": "Aceptar una propuesta no modifica el texto original",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "16.10",
+   "modulo": "16",
+   "nombre": "Editar y descartar propuestas",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "17.1",
+   "modulo": "17",
+   "nombre": "La base tiene 30 tablas",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "tablas"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "17.2",
+   "modulo": "17",
+   "nombre": "No existen tablas ni columnas de fotos o archivos de trabajos",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "TABLE_NAME",
+    "COLUMN_NAME"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "17.3",
+   "modulo": "17",
+   "nombre": "Toda tabla tiene clave primaria",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "TABLE_NAME"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "17.4",
+   "modulo": "17",
+   "nombre": "Claves foráneas definidas",
+   "kind": "info",
+   "expect": [
+    "rowsgt"
+   ],
+   "columnas": [
+    "TABLE_NAME",
+    "COLUMN_NAME",
+    "REFERENCED_TABLE_NAME",
+    "REFERENCED_COLUMN_NAME"
+   ],
+   "filas": [
+    [
+     "asignaciones_trabajo",
+     "asignado_por",
+     "usuarios",
+     "id"
+    ],
+    [
+     "asignaciones_trabajo",
+     "mecanico_id",
+     "usuarios",
+     "id"
+    ],
+    [
+     "asignaciones_trabajo",
+     "orden_id",
+     "ordenes_trabajo",
+     "id"
+    ],
+    [
+     "auditoria",
+     "superadmin_id",
+     "superadmins",
+     "id"
+    ],
+    [
+     "auditoria",
+     "usuario_id",
+     "usuarios",
+     "id"
+    ],
+    [
+     "avances_ordenes",
+     "orden_id",
+     "ordenes_trabajo",
+     "id"
+    ],
+    [
+     "avances_ordenes",
+     "usuario_id",
+     "usuarios",
+     "id"
+    ],
+    [
+     "catalogo_items",
+     "categoria_id",
+     "categorias_catalogo",
+     "id"
+    ],
+    [
+     "comprobantes_pagos_sistema",
+     "pago_sistema_id",
+     "pagos_sistema",
+     "id"
+    ],
+    [
+     "consultas",
+     "cliente_id",
+     "clientes",
+     "id"
+    ],
+    [
+     "consultas",
+     "cobro_por",
+     "usuarios",
+     "id"
+    ],
+    [
+     "consultas",
+     "creado_por",
+     "usuarios",
+     "id"
+    ],
+    [
+     "consultas",
+     "vehiculo_id",
+     "vehiculos",
+     "id"
+    ],
+    [
+     "detalles_consultas",
+     "consulta_id",
+     "consultas",
+     "id"
+    ],
+    [
+     "detalles_consultas",
+     "registrado_por",
+     "usuarios",
+     "id"
+    ],
+    [
+     "detalles_liquidaciones_mecanicos",
+     "liquidacion_id",
+     "liquidaciones_mecanicos",
+     "id"
+    ],
+    [
+     "detalles_liquidaciones_mecanicos",
+     "movimiento_mecanico_id",
+     "movimientos_mecanicos",
+     "id"
+    ],
+    [
+     "detalles_pagos_clientes",
+     "pago_cliente_id",
+     "pagos_clientes",
+     "id"
+    ],
+    [
+     "detalles_pagos_sistema",
+     "pago_id",
+     "pagos_sistema",
+     "id"
+    ],
+    [
+     "detalles_presupuestos",
+     "catalogo_item_id",
+     "catalogo_items",
+     "id"
+    ],
+    [
+     "detalles_presupuestos",
+     "presupuesto_id",
+     "presupuestos",
+     "id"
+    ],
+    [
+     "historial_estados_ordenes",
+     "cambiado_por",
+     "usuarios",
+     "id"
+    ],
+    [
+     "historial_estados_ordenes",
+     "orden_id",
+     "ordenes_trabajo",
+     "id"
+    ],
+    [
+     "historial_precios_catalogo",
+     "cambiado_por",
+     "usuarios",
+     "id"
+    ],
+    [
+     "historial_precios_catalogo",
+     "catalogo_item_id",
+     "catalogo_items",
+     "id"
+    ],
+    [
+     "liquidaciones_mecanicos",
+     "creado_por",
+     "usuarios",
+     "id"
+    ],
+    [
+     "liquidaciones_mecanicos",
+     "mecanico_id",
+     "usuarios",
+     "id"
+    ],
+    [
+     "movimientos_mecanicos",
+     "mecanico_id",
+     "usuarios",
+     "id"
+    ],
+    [
+     "movimientos_mecanicos",
+     "orden_id",
+     "ordenes_trabajo",
+     "id"
+    ],
+    [
+     "movimientos_mecanicos",
+     "registrado_por",
+     "usuarios",
+     "id"
+    ],
+    [
+     "movimientos_stock",
+     "catalogo_item_id",
+     "catalogo_items",
+     "id"
+    ],
+    [
+     "movimientos_stock",
+     "orden_id",
+     "ordenes_trabajo",
+     "id"
+    ],
+    [
+     "movimientos_stock",
+     "pago_cliente_id",
+     "pagos_clientes",
+     "id"
+    ],
+    [
+     "movimientos_stock",
+     "resuelto_por",
+     "usuarios",
+     "id"
+    ],
+    [
+     "movimientos_stock",
+     "solicitado_por",
+     "usuarios",
+     "id"
+    ],
+    [
+     "notificaciones",
+     "superadmin_id",
+     "superadmins",
+     "id"
+    ],
+    [
+     "notificaciones",
+     "usuario_id",
+     "usuarios",
+     "id"
+    ],
+    [
+     "ordenes_trabajo",
+     "cliente_id",
+     "clientes",
+     "id"
+    ],
+    [
+     "ordenes_trabajo",
+     "mecanico_id",
+     "usuarios",
+     "id"
+    ],
+    [
+     "ordenes_trabajo",
+     "presupuesto_id",
+     "presupuestos",
+     "id"
+    ]
+   ],
+   "n": 57,
+   "ok": true,
+   "obtenido": "57 fila(s)"
+  },
+  {
+   "id": "17.5",
+   "modulo": "17",
+   "nombre": "Claves foráneas sin índice propio",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "TABLE_NAME",
+    "COLUMN_NAME"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  },
+  {
+   "id": "17.6",
+   "modulo": "17",
+   "nombre": "Cantidad de registros por tabla",
+   "kind": "info",
+   "expect": [
+    "rowsN",
+    30
+   ],
+   "columnas": [
+    "tabla",
+    "filas"
+   ],
+   "filas": [
+    [
+     "roles",
+     2
+    ],
+    [
+     "usuarios",
+     5
+    ],
+    [
+     "superadmins",
+     1
+    ],
+    [
+     "taller",
+     1
+    ],
+    [
+     "clientes",
+     16
+    ],
+    [
+     "vehiculos",
+     17
+    ],
+    [
+     "consultas",
+     21
+    ],
+    [
+     "detalles_consultas",
+     28
+    ],
+    [
+     "presupuestos",
+     12
+    ],
+    [
+     "categorias_catalogo",
+     7
+    ],
+    [
+     "catalogo_items",
+     17
+    ],
+    [
+     "historial_precios_catalogo",
+     1
+    ],
+    [
+     "detalles_presupuestos",
+     26
+    ],
+    [
+     "ordenes_trabajo",
+     11
+    ],
+    [
+     "historial_estados_ordenes",
+     40
+    ],
+    [
+     "asignaciones_trabajo",
+     11
+    ],
+    [
+     "pagos_clientes",
+     7
+    ],
+    [
+     "detalles_pagos_clientes",
+     8
+    ],
+    [
+     "movimientos_stock",
+     29
+    ],
+    [
+     "movimientos_mecanicos",
+     7
+    ],
+    [
+     "liquidaciones_mecanicos",
+     3
+    ],
+    [
+     "detalles_liquidaciones_mecanicos",
+     7
+    ],
+    [
+     "periodos_pago_sistema",
+     2
+    ],
+    [
+     "pagos_sistema",
+     2
+    ],
+    [
+     "detalles_pagos_sistema",
+     3
+    ],
+    [
+     "comprobantes_pagos_sistema",
+     0
+    ],
+    [
+     "notificaciones",
+     13
+    ],
+    [
+     "auditoria",
+     13
+    ],
+    [
+     "propuestas_ia",
+     1
+    ],
+    [
+     "avances_ordenes",
+     10
+    ]
+   ],
+   "n": 30,
+   "ok": true,
+   "obtenido": "30 fila(s)"
+  },
+  {
+   "id": "18.1",
+   "modulo": "18",
+   "nombre": "Flujo completo: consulta → presupuesto → orden → pago",
+   "kind": "op",
+   "expect": [
+    "ok"
+   ],
+   "columnas": [
+    "resultado"
+   ],
+   "filas": [
+    [
+     "OK"
+    ]
+   ],
+   "n": 1,
+   "ok": true,
+   "obtenido": "OK"
+  },
+  {
+   "id": "18.2",
+   "modulo": "18",
+   "nombre": "Los datos no cambiaron tras las pruebas",
+   "kind": "integridad",
+   "expect": [
+    "rows0"
+   ],
+   "columnas": [
+    "id"
+   ],
+   "filas": [],
+   "n": 0,
+   "ok": true,
+   "obtenido": "0 fila(s)"
+  }
+ ]
+}

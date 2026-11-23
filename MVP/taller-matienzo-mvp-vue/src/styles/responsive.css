@@ -1,0 +1,12 @@
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:760px){
+  .top{gap:.25rem;padding:.5rem .5rem} .top .btn-top{padding:.45rem .5rem} .top .marca{font-size:.9rem;gap:.35rem;padding:0} .top .marca .logo{width:28px;height:28px}
+  .login-card{grid-template-columns:1fr} .demo-acc{border-left:0;padding-left:0;border-top:1px solid var(--borde);padding-top:1rem}
+  .top .quien{display:none} .top .btn-top .ic-user{display:inline-block} .top .txt-btn{display:none}
+  .menu{grid-template-columns:repeat(2,1fr)} .comparar{grid-template-columns:1fr}
+  .item-row{grid-template-columns:1fr 1fr;} .item-row .sub{grid-column:1/2;text-align:left}
+  h1{font-size:1.35rem}
+  table.resp thead{display:none} table.resp tr{display:block;border-top:1px solid var(--borde);padding:.4rem 0} table.resp td{display:flex;justify-content:space-between;gap:1rem;border:0;padding:.25rem .8rem;text-align:right}
+  table.resp td::before{content:attr(data-l);font-weight:700;color:var(--txt-2);text-align:left}
+}
+@media print{.top,.btn,.btn-volver,.tostadas{display:none!important}}

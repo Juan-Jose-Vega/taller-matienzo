@@ -1,0 +1,12 @@
+/* Variables de color: identidad rojo oscuro, modo claro y oscuro */
+:root{
+  --rojo:#8b1a1a; --rojo-2:#a82424; --rojo-suave:#f7e6e6; --rojo-txt:#7a1515;
+  --bg:#f5f3f1; --card:#ffffff; --txt:#241d1d; --txt-2:#6b6262; --borde:#e4dedb; --sombra:0 1px 3px rgba(40,20,20,.08),0 6px 18px rgba(40,20,20,.05);
+  --ok:#1f7a45; --ok-bg:#e3f4ea; --warn:#a05a00; --warn-bg:#fdf0d9; --err:#b3261e; --err-bg:#fbe5e3; --info:#1e5a82; --info-bg:#e2eff8; --gris-bg:#ece8e5;
+  --radio:14px;
+}
+:root[data-tema="oscuro"]{
+  --bg:#17130f; --card:#221c1a; --txt:#f2ece9; --txt-2:#b3a8a4; --borde:#3a312e; --sombra:0 1px 3px rgba(0,0,0,.5);
+  --rojo:#c0392b; --rojo-2:#d4483a; --rojo-suave:#3a1f1c; --rojo-txt:#ff9b8f;
+  --ok:#5fd18a; --ok-bg:#183626; --warn:#f0b254; --warn-bg:#3b2d12; --err:#ff8f86; --err-bg:#3d1b18; --info:#7cc0ee; --info-bg:#16303f; --gris-bg:#2e2725;
+}
