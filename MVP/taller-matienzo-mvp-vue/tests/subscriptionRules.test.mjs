@@ -1,0 +1,11 @@
+import test from 'node:test'; import assert from 'node:assert/strict';
+import { estadoSuscripcion as E, renovar } from '../src/services/subscriptionRules.js';
+import { addMeses, addDias, diffDias } from '../src/utils/dates.js';
+const e = (venc, hoy, extra = {}) => E({ vencimiento: venc, hoy, ...extra });
+test('vigente, próximo, hoy', () => { assert.equal(e('2026-11-30', '2026-11-01').estado, 'vigente'); assert.equal(e('2026-11-05', '2026-11-01').estado, 'proximo'); assert.equal(e('2026-11-01', '2026-11-01').estado, 'proximo'); });
+test('3 días de gracia y luego bloqueo', () => { const v = '2026-11-10'; assert.equal(e(v, '2026-11-11').estado, 'vencido'); assert.equal(e(v, '2026-11-12').estado, 'gracia'); assert.equal(e(v, '2026-11-13').estado, 'gracia'); assert.equal(e(v, '2026-11-14').estado, 'bloqueado'); assert.equal(e(v, '2026-11-14').bloqueado, true); assert.equal(e(v, '2026-11-13').bloqueado, false); });
+test('suspendida bloquea siempre', () => assert.equal(e('2027-01-01', '2026-11-01', { suspendida: true }).bloqueado, true));
+test('renovar continúa desde el vencimiento anterior', () => { const r = renovar({ inicio: '2026-10-10', vencimiento: '2026-11-10', diaAncla: 10, duracionMeses: 1, bloqueado: false, hoy: '2026-11-08' }); assert.equal(r.inicio, '2026-11-10'); assert.equal(r.vencimiento, '2026-12-10'); });
+test('renovar bloqueado empieza hoy', () => { const r = renovar({ inicio: '2026-10-10', vencimiento: '2026-11-10', diaAncla: 10, duracionMeses: 1, bloqueado: true, hoy: '2026-11-20' }); assert.equal(r.inicio, '2026-11-20'); assert.equal(r.vencimiento, '2026-12-20'); });
+test('fin de mes: 31 de enero + 1 mes = 28 de febrero', () => assert.equal(addMeses('2027-01-31', 1), '2027-02-28'));
+test('fechas', () => { assert.equal(addDias('2026-12-31', 1), '2027-01-01'); assert.equal(diffDias('2026-11-01', '2026-11-04'), 3); });
